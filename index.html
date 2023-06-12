@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Time</title>
+  <!--
+  ~~~~~~~~~~~~~~~~~~~~~~~~~
+    for those of you that code... I know this is ugly. I spent most my time trying to figure out the math. Don't judge too harshly.
+  ~~~~~~~~~~~~~~~~~~~~~~~~~
+  -->
+  <style>
+  body{
+    margin:0;
+    background-color: black;
+    color:white;
+    font-family: Helvetica;
+  }
+  p{
+    margin:0 auto;
+  }
+  h4{
+    text-decoration: underline;
+  }
+  .explanation{
+    width:90%;
+    margin:0 auto 15px auto;
+  }
+  .wrapper{
+    display:flex;
+    flex-flow:column nowrap;
+    margin: 1%;
+  }
+  #canvas{
+     background-color: black;
+     width:100%;
+  }
+  input{
+    width:95%;
+    margin:0 auto;
+  }
+  #clock{
+    font-size: 155px;
+
+    font-weight: bold;
+  }
+  .perc > path,
+  .dist > path
+  {
+    display:none;
+  }
+  line{
+    stroke:white
+  }
+  .clock{
+    text-align: center;
+  }
+  .stat{
+    padding:2%;
+    font-size: 55px;
+  }
+  .stat>p{
+    font-size: 12px;
+  }
+  .stat.shrink{
+    flex-shrink:0.3;
+  }
+  .stats{
+    display:flex;
+    flex-flow:row wrap;
+    width:70%;
+    margin:30px auto;
+    justify-content:space-around;
+  }
+  .equation{
+    width:100%;
+    text-align: center;
+  }
+</style>
+
+</head>
+<body>
+  <div class="wrapper">
+    <div class="explanation">
+      <h1>Time Dilation</h1>
+      <h4>Explanation</h4>
+      <p>This is a small simulation to illustrate the concept of relativistic time dilation. What is relativistic time dilation? Essentially the law states that the closer you get to the speed of light, the slower time moves for you. Lets say that you leave earth going 50% the speed of light. To a stationary observer on earth, your clock would appear to tick slower; 1 second would appear to be 1.15 seconds.</p>
+
+      <div class="equation"><img src="equation.svg" alt="equation" ></div>
+      <p>In the equation above: <i>t</i> is the time seen by a stationary observer. <i>t<sub>0</sub></i> is the time in a rest frame. <i>v</i> is your velocity and <i>c</i> is the speed of light. So for example if you want to see what 1 sec feels like close to the speed of light, <i>t<sub>0</sub></i> becomes 1 sec, and <i>v</i> becomes the speed of light (186282 miles/second). Solve for <i>t</i>.</p>
+      <h4>Instructions</h4>
+      <p>Use the slider below to manipulate your speed. You will see a simulation of your rocket ship bounce Earth and the Moon. You may also notice the clock begins to tick slower. This is how the clock would appear to a stationary observer. To you the clock would seem to tick normally.</p>
+    </div>
+    <div class='clock'>
+      <p>This is how your clock would look to a stationary observer.</p>
+      <span id="clock"></span>
+    </div>
+    <br>
+    <p>Distance (x1000 miles)</p>
+    <svg id="canvas">
+      <image id="moon" x="95%" y="40%" width="60" height="60" xlink:href="moon.svg" />
+      <image id="earth" x="-70" y="20%" width="140" height="140" xlink:href="earth.svg" />
+    </svg>
+    <input id="percent" type="range" name="percent" min="0" max="100">
+    <p>Percent of the Speed of Light</p>
+    <div class="stats">
+      <div class="stat">
+        <p>Dilation in sec.</p>
+        <span id="diaVal">1</span>
+      </div>
+      <div class="stat shrink">
+        <p>% the speed of light</p>
+        <span id="perc">0</span>
+      </div>
+      <div class="stat">
+        <p>mph</p>
+        <span id="mph">0</span>
+      </div>
+    </div>
+  </div>
+
+  <script src="d3.v3.min.js"></script>
+  <script src="time.js"></script>
+</body>
+</html>
