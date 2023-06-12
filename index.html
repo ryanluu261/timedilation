@@ -2,12 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Time</title>
-  <!--
-  ~~~~~~~~~~~~~~~~~~~~~~~~~
-    for those of you that code... I know this is ugly. I spent most my time trying to figure out the math. Don't judge too harshly.
-  ~~~~~~~~~~~~~~~~~~~~~~~~~
-  -->
+  <title>Time Dilation</title>
   <style>
   body{
     margin:0;
@@ -24,6 +19,9 @@
   .explanation{
     width:90%;
     margin:0 auto 15px auto;
+  }
+  .title {
+    font-size: 30px;
   }
   .wrapper{
     display:flex;
@@ -83,16 +81,12 @@
     <div class="explanation">
       <h1>Time Dilation</h1>
       <h4>Explanation</h4>
-      <p>This is a small simulation to illustrate the concept of relativistic time dilation. What is relativistic time dilation? Essentially the law states that the closer you get to the speed of light, the slower time moves for you. Lets say that you leave earth going 50% the speed of light. To a stationary observer on earth, your clock would appear to tick slower; 1 second would appear to be 1.15 seconds.</p>
+      <p class="title">This is a website portraying the concept of time dilation, a direct result of Special Relativity. (I tried to build a light cone calculator but the Minkowski equation was a lot harder to integrate with graphics than this formula of time dilation that I found below, so I went with this.) In essence, time dilation suggests that as you approach the speed of light, time appears to slow down for you. For instance, if you were traveling at 50% of the speed of light away from Earth, an observer remaining stationary on Earth would perceive your clock as ticking slower. From their perspective, 1 second for you would appear to be 1.15 seconds.</p>
 
       <div class="equation"><img src="equation.svg" alt="equation" ></div>
-      <p>In the equation above: <i>t</i> is the time seen by a stationary observer. <i>t<sub>0</sub></i> is the time in a rest frame. <i>v</i> is your velocity and <i>c</i> is the speed of light. So for example if you want to see what 1 sec feels like close to the speed of light, <i>t<sub>0</sub></i> becomes 1 sec, and <i>v</i> becomes the speed of light (186282 miles/second). Solve for <i>t</i>.</p>
+      <p>In the equation above: <i>t</i> is the time seen by a stationary observer, <i>t<sub>0</sub></i> is the time in a rest frame, <i>v</i> is your velocity and <i>c</i> is the speed of light (186282 miles/second)
       <h4>Instructions</h4>
-      <p>Use the slider below to manipulate your speed. You will see a simulation of your rocket ship bounce Earth and the Moon. You may also notice the clock begins to tick slower. This is how the clock would appear to a stationary observer. To you the clock would seem to tick normally.</p>
-    </div>
-    <div class='clock'>
-      <p>This is how your clock would look to a stationary observer.</p>
-      <span id="clock"></span>
+      <p>Use the slider below to manipulate your speed. You will see a simulation of your rocket ship bounce Earth and the Moon. You may also notice the clock begins to tick slower. This is how the clock would appear to a stationary observer. To you, the traveller, the clock would seem to tick normally.</p>
     </div>
     <br>
     <p>Distance (x1000 miles)</p>
@@ -115,6 +109,11 @@
         <p>mph</p>
         <span id="mph">0</span>
       </div>
+    </div>
+    <br>
+    <div class='clock'>
+      <p>This is how the traveller's clock would look to a stationary observer.</p>
+      <span id="clock"></span>
     </div>
   </div>
 
